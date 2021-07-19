@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT OR Apache-2.0
+// SPDX-License-Identifier: MIT 
 pragma solidity ^0.8.3;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -12,7 +12,7 @@ contract NFT is ERC721URIStorage {
   Counters.Counter private _tokenIds;
   address contractAddress;
 
-  constructor(address marketplaceAddress) ERC721("Metaverse Tokens", "METT") {
+  constructor(address marketplaceAddress) ERC721("Origami Tokens", "ORGM") {
     contractAddress = marketplaceAddress;
   }
 

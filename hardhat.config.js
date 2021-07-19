@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 const fs = require('fs');
+require('dotenv').config();
 const privateKey = fs.readFileSync(".secret").toString().trim();
 
 
@@ -9,6 +10,9 @@ const privateKey = fs.readFileSync(".secret").toString().trim();
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+
+console.log(process.env.INFURA_KEY);
+
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
@@ -16,7 +20,11 @@ module.exports = {
       chainId: 1337
     },
     mumbai: {
-      url: "https://rpc-mumbai.matic.today",
+      url: `https://polygon-mumbai.infura.io/v3/${process.env.INFURA_KEY}`,
+      accounts: [privateKey]
+    },
+    mainnet: {
+      url: `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_KEY}`,
       accounts: [privateKey]
     }
   },
