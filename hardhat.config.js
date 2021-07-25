@@ -11,8 +11,6 @@ const privateKey = fs.readFileSync(".secret").toString().trim();
  * @type import('hardhat/config').HardhatUserConfig
  */
 
-console.log(process.env.INFURA_KEY);
-
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
